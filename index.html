@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>React Todo List App v2</title>
-    <script src="https://fb.me/react-0.12.2.min.js"></script>
+    <script src="https://fb.me/react-0.12.2.js"></script>
 	  <script src="https://fb.me/JSXTransformer-0.12.2.js"></script>
   </head>
   <body>
@@ -13,11 +13,55 @@
 
     <script type="text/jsx">
       /** @jsx React.DOM */
+      var TodoBanner = React.createClass({
+        render: function() {
+          return (
+            <h1>Todo Banner</h1>
+          );
+        }
+      });
+
+      var TodoList = React.createClass({
+        render: function() {
+          return (
+            <div>
+              <h1>Todo List</h1>
+              <TodoItem />
+            </div>
+
+          );
+        }
+      });
+
+      var TodoItem = React.createClass({
+        render: function() {
+          return (
+            <ul>
+              <ul><h2>Todo Item 1</h2></ul>
+              <ul><h2>Todo Item 2</h2></ul>
+              <ul><h2>Todo Item 3</h2></ul>
+            </ul>
+          );
+        }
+      });
+
+      var TodoForm = React.createClass({
+        render: function() {
+          return (
+            <h1>Todo Form</h1>
+          );
+        }
+      });
+
       var TodoApp = React.createClass({
         render: function() {
-            return (
-              <h1>React Todo List App</h1>
-            );
+          return (
+            <div>
+              <TodoBanner />
+              <TodoList />
+              <TodoForm />
+            </div>
+          );
         }
       });
 
